@@ -4,69 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ty's Guitar Shop Repairs</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #68141b, #24080c);
+            color: #292929;
+            min-height: 100vh;
         }
+
         .container {
-            max-width: 650px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 20px;
         }
-        h1 { color: #333; }
+
+        .header {
+            background: #fff8f7;
+            padding: 45px 30px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #68141b;
+            margin: 0 0 15px;
+            font-size: 32px;
+        }
+
+        h2 {
+            color: #68141b;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #555;
+        }
+
         .download {
             display: inline-block;
-            background-color: #236a38;
+            background: #292929;
             color: white;
-            padding: 14px 25px;
-            margin: 20px 0;
+            padding: 16px 30px;
+            margin-top: 20px;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
         }
 
         .download:hover {
-            background-color: #184c29;
+            background: #68141b;
+        }
+
+        .requirement {
+            font-size: 14px;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        .section {
+            background: #fff8f7;
+            padding: 30px;
+            border-radius: 14px;
+            margin-top: 20px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .feature {
+            background: #f2e6e5;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #68141b;
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            color: #68141b;
+        }
+
+        .feature p {
+            margin-bottom: 0;
+            line-height: 1.5;
+            color: #444;
         }
 
         ol {
-            text-align: left;
-            line-height: 1.8;
+            line-height: 2;
+            padding-left: 25px;
+        }
+
+        footer {
+            color: #f0dada;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px auto;
+                padding: 12px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Ty's Guitar Shop Repairs</h1>
-        <p>
-            An Android application for managing guitar repair
-            tickets, inventory parts, and repair reports.
-        </p>
-        <h2>Download Application</h2>
-        <p>Requires Android 8.0 or higher.</p>
-        <a class="download"
-           href="https://github.com/tgorin-wgu/TGS-Repairs/raw/refs/heads/main/app-release.apk">
-            Download TGS Repairs APK
-        </a>
-        <h2>Installation Instructions</h2>
-        <ol>
-            <li>Download the APK using the button above.</li>
-            <li>Open the downloaded APK on your Android device.</li>
-            <li>If prompted, allow installation from this source
-                in your Android settings.</li>
-            <li>Follow the prompts to install the application.</li>
-            <li>Launch TGS Repairs and create an employee account
-                or log in.</li>
-        </ol>
-        <p>
-            Developed for the WGU D424 Software Engineering Capstone.
-        </p>
-    </div>
+    <main class="container">
+
+        <header class="header">
+            <div class="logo">🎸</div>
+
+            <h1>Ty's Guitar Shop Repairs</h1>
+
+            <p class="subtitle">
+                An Android application designed to manage
+                guitar repair tickets, inventory parts,
+                and repair reports.
+            </p>
+
+            <a class="download"
+               href="https://github.com/tgorin-wgu/TGS-Repairs/raw/refs/heads/main/app-release.apk">
+                Download Android APK
+            </a>
+
+            <p class="requirement">
+                Requires Android 8.0 or higher
+            </p>
+        </header>
+
+        <section class="section">
+            <h2>Application Features</h2>
+
+            <div class="features">
+
+                <div class="feature">
+                    <h3>Repair Ticket Management</h3>
+                    <p>
+                        Create, update, search, and delete
+                        guitar repair tickets.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Inventory Parts</h3>
+                    <p>
+                        Manage inventory parts associated
+                        with individual repair tickets.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Date Notifications</h3>
+                    <p>
+                        Schedule notifications for repair
+                        dates and inventory parts.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Reporting and Sharing</h3>
+                    <p>
+                        Generate repair ticket summary reports
+                        and share repair information.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Installation Instructions</h2>
+
+            <ol>
+                <li>Download the APK using the button above.</li>
+                <li>Open the downloaded APK on your Android device.</li>
+                <li>
+                    If prompted, allow installation from this
+                    source in your Android settings.
+                </li>
+                <li>Follow the prompts to install the application.</li>
+                <li>
+                    Launch TGS Repairs and create an employee
+                    account or log in.
+                </li>
+            </ol>
+        </section>
+
+        <footer>
+            Developed for the WGU D424 Software Engineering Capstone
+        </footer>
+
+    </main>
 </body>
 </html>
